@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Stack, TextField, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { Reservation } from "../interfaces/reservation";
 import TableShared from "../components/tableShared";
@@ -34,7 +34,7 @@ const AllReservations = () =>{
         {name:"Status"},{name:"Action"}
     ]
 
-    const userTableRow = filteredReservations?.filter((item:any)=>item.userId==userInfo.id)
+    const userTableRow = allReservations?.filter((item:any)=>item.userId==userInfo.id)
     .map((reservation:any)=>{
         return{
             cell1:(<Typography fontSize={17} variant="caption">{reservation.hotel}</Typography>),
